@@ -21,7 +21,7 @@ class Map
 
 
    def show
-
+     return @map
    end
 
 
