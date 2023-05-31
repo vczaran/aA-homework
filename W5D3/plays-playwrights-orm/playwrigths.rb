@@ -36,4 +36,29 @@ def update
         id = ?
     SQL
   end
+
+  def get_plays
+    raise "#{self} not in database" unless self.id
+    plays = PlayDBConnection.instance.execute(<<-SQL, self.id)
+      SELECT
+        *
+      FROM
+        plays
+      WHERE
+        playwright_id = ?
+    SQL
+    plays.map { |play| Play.new(play) }
+  end
+
+  def self.find_by_name(name)
+    person = PlayDBConnection.instance.execute(<<-SQL, name)
+      SELECT
+        *
+      FROM
+        playwrights
+      WHERE
+        name = ?
+    SQL
+  end
+  
 end
