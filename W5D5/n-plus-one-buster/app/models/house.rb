@@ -29,6 +29,6 @@ class House < ApplicationRecord
   end
 
   def better_seeds_query
-    # Your code here
+    plants.includes(:seeds).map(&:seeds)
   end
 end
