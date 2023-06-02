@@ -44,7 +44,7 @@ end
 def star_wars
   # display the id, title, and year of each Star Wars movie in movies
   # hint: use 'select' and 'where'
-  Movie.select(:id, :title, :yr).where('title LIKE \'%Star Wars%\'')
+  Movie.select(:id, :title, :yr).where("title LIKE '%Star Wars%'")
 end
 
 
@@ -79,7 +79,7 @@ def pulp_fiction_actors
   Actor
     .select(:id, :name)
     .joins(:movies)
-    .where('title = \'Pulp Fiction\'')
+    .where("title = 'Pulp Fiction'")
   
 end
 
