@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: ninety_nine_cats2_long_practice_development
+  database: ninety_nine_cats_helpers_layouts_mailers
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ninety_nine_cats2_long_practice_test
+  database: ninety_nine_cats_helpers_layouts_mailers_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: ninety_nine_cats2_long_practice_production
-  username: ninety_nine_cats2_long_practice
-  password: <%= ENV["NINETY_NINE_CATS2_LONG_PRACTICE_DATABASE_PASSWORD"] %>
+  database: ninety_nine_cats_helpers_layouts_mailers_production
+  username: ninety_nine_cats_helpers_layouts_mailers
+  password: <%= ENV["ninety_nine_cats_helpers_layouts_mailers_PASSWORD"] %>
